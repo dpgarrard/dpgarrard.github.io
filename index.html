@@ -19,7 +19,7 @@
        <tr><th>Name</th><th>State</th><th>Age</th><th>Flavor</th></tr>
        {{#each rows}}
             <tr>
-                <td>{{name}}</td><td>{{state}}</td><td>{{age}}</td><td>{{flavor}}</td>
+                <td>{{name}}</td><td>{{state}}</td><td>{{age}}</td><td>{{flavor}}</td> 
             </tr>
        {{/each}}
    </table>
@@ -27,11 +27,11 @@
   
 <script>
     window.onload = async function() {
-        var url = "hb6data.json";     // the data
-        var response = await fetch(url);
-        if(response.ok) {
+        var url = "hb6data.json";     // the data assigned to url 
+        var response = await fetch(url); //get data using fetch assign to response
+        if(response.ok) {  //test if feedback from fetch is ok
 
-            var data = await response.json();
+            var data = await response.json();  //convert json to javascript array
 
             var templateText = document.getElementById('tableTemplate').innerHTML; // Get template text 
             var compiledTemplateText = Handlebars.compile(templateText);    // Compile the Handlebars template
@@ -45,4 +45,5 @@
     }
   
 </script>
+
 </html>
