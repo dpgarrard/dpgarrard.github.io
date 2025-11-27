@@ -20,8 +20,8 @@
          <div class = "d-flex justify-content-center text-center">
          
             <h1 id= "my_heading">Select A Major Right Now</h1> 
-            <button type ='button' id = 'show_bus' class="btn btn-primary" onClick="get_data('major')">Business Major</button> 
-            <button type ='button' id ='show_cit' class ="btn btn-primary" onClick="get_data('major')">CIT Major</button> 
+            <button type ='button' id = 'show_bus' class="btn btn-primary" onClick="get_data('BUS')">Business Major</button> 
+            <button type ='button' id ='show_cit' class ="btn btn-primary" onClick="get_data('CIT')">CIT Major</button> 
           </div>
 		  <div id = "student_table">
           </div>
@@ -61,14 +61,14 @@
         
                	for (i = 0; i < data.length; i++) {
                   if (data[i].major == selected_major) {
-                  student_by_major.push(data[i].major);
+                  	student_by_major.push(data[i].major);
                   }
                	}
         
                // add to handlebar table template
                	var template_text = document.getElementById('student_template').innerHTML; //access script tag student_template and assign to template_text
                	var compiled_template_text = Handlebars.compile(template_text);   // get and compile template code from prior variable and assign a new variable
-               	var compiled_html = compiled_template_text({ rows : student_by_major });      // apply data to template using #each argument as key and filtered data variable as valued pair
+               	var compiled_html = compiled_template_text({ rows: student_by_major });      // apply data to template using #each argument as key and filtered data variable as valued pair
                	document.getElementById('student_table').innerHTML = compiled_html; // insert all prior steps into div tag with appropriate id where wanted
             }
             else {
@@ -80,6 +80,7 @@
       
    </body>
 </html>
+
 
 
 
