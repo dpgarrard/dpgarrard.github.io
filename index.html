@@ -50,7 +50,7 @@
 
             if(response.ok) {   // test to ensure everything was received if so continue else return error
         		
-				document.getElementById("whole_thing").style = "background-color: lightred"; // changes entire document color (body) to light red 
+				document.getElementById("whole_thing").style = "background-color: lightgreen"; // changes entire document color (body) to light red 
            	 	
 				if( selected_major == 'BUS') {
             		document.getElementById("show_bus").setAttribute("class","btn-warning");  // changes the button color after its pressed
@@ -79,7 +79,7 @@
                	var compiled_html = compiled_template_text({ rows: student_by_major });      // apply data to template using #each argument as key and filtered data variable as valued pair
                	document.getElementById('student_table').innerHTML = compiled_html; // insert all prior steps into div tag with appropriate id where wanted
 
-				document.getElementById('student_table').style = "background-color: lightgreen";  //change table background color
+				document.getElementById('student_table').style = "background-color: lightblue";  //change table background color
 			}	
 			
             else {
@@ -91,6 +91,7 @@
       
    </body>
 </html>
+
 
 
 
