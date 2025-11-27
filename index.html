@@ -68,7 +68,7 @@
                // add to handlebar table template
                	var template_text = document.getElementById('student_template').innerHTML; //access script tag student_template and assign to template_text
                	var compiled_template_text = Handlebars.compile(template_text);   // get and compile template code from prior variable and assign a new variable
-               	compiled_html = compiled_template_text({ rows : student_by_major });      // apply data to template using #each argument as key and filtered data variable as valued pair
+               	var compiled_html = compiled_template_text({ rows : student_by_major });      // apply data to template using #each argument as key and filtered data variable as valued pair
                	document.getElementById('student_table').innerHTML = compiled_html; // insert all prior steps into div tag with appropriate id where wanted
             }
             else {
@@ -80,6 +80,7 @@
       
    </body>
 </html>
+
 
 
 
