@@ -26,7 +26,7 @@
 				var data = await response.json(); // change json format to javascript array and assign to data
 
                	// filter data array for the selected major
-               	student_by_major = []
+               	var student_by_major = []
         
                	for (i = 0; i < data.length; i++) {
                   if (data[i].major == selected_major) {
@@ -80,6 +80,7 @@
       
    </body>
 </html>
+
 
 
 
