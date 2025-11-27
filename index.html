@@ -43,10 +43,9 @@
       </script>
   
       <script>
-	      async function get_data(selected_major) {  //call this function when button is pressed the selected major is the argument or value it recieves from the button
-           
-      
-            var response = await fetch('cit5students.json');   // receive all items from json array assign to response
+	      async function get_data(selected_major) {  //call this function when button is pressed the selected major is the argument or value it recieves from the button  
+            
+			var response = await fetch('cit5students.json');   // receive all items from json array assign to response
 
             if(response.ok) {   // test to ensure everything was received if so continue else return error
         	document.getElementById("whole_thing").style = "background-color: lightgreen"; // changes entire document color (body) to light green 
@@ -81,6 +80,7 @@
       </script> 
    </body>
 </html>
+
 
 
 
