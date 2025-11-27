@@ -48,29 +48,29 @@
 			var response = await fetch('cit5students.json');   // receive all items from json array assign to response
 
             if(response.ok) {   // test to ensure everything was received if so continue else return error
-        	document.getElementById("whole_thing").style = "background-color: lightgreen"; // changes entire document color (body) to light green 
-            if('show_bus') {
-            document.getElementById("show_bus").setAttribute("class","btn-warning");  // changes the button color after its pressed
-            }
-            else if ('show_cit') {
-               document.getElementById("show_cit").setAttribute("class","btn-warning");  // changes the other button color after its pressed
-            }
-			var data = await response.json(); // change json format to javascript array and assign to data
- document.getEl
-               // filter data array for the selected major
-               student_by_major = []
+        	//document.getElementById("whole_thing").style = "background-color: lightgreen"; // changes entire document color (body) to light green 
+            //if('show_bus') {
+            //document.getElementById("show_bus").setAttribute("class","btn-warning");  // changes the button color after its pressed
+            //}
+            //else if ('show_cit') {
+               //document.getElementById("show_cit").setAttribute("class","btn-warning");  // changes the other button color after its pressed
+            //}
+				var data = await response.json(); // change json format to javascript array and assign to data
+
+               	// filter data array for the selected major
+               	student_by_major = []
         
-               for (i = 0, i < data.length, i++) {
+               	for (i = 0, i < data.length, i++) {
                   if (data[i].major == selected_major) {
                   student_by_major.push(data[i].major);
                   }
-               }
+               	}
         
                // add to handlebar table template
-               var templateText = document.getElementById('student_template').innerHTML; //access script tag student_template and assign to template_text
-               var compiledTemplateText = Handlebars.compile(template_text);   // get and compile template code from prior variable and assign a new variable
-               compiled_html = compiledTemplateText({ rows: student_by_major });      // apply data to template using #each argument as key and filtered data variable as valued pair
-               document.getElementById('student_table').innerHTML = compiledHtml; // insert all prior steps into div tag with appropriate id where wanted
+               	var templateText = document.getElementById('student_template').innerHTML; //access script tag student_template and assign to template_text
+               	var compiledTemplateText = Handlebars.compile(template_text);   // get and compile template code from prior variable and assign a new variable
+               	compiled_html = compiledTemplateText({ rows: student_by_major });      // apply data to template using #each argument as key and filtered data variable as valued pair
+               	document.getElementById('student_table').innerHTML = compiledHtml; // insert all prior steps into div tag with appropriate id where wanted
             }
             else {
                document.querySelector('#student_table').innerHTML = "There was an error, or menu items not found"; // if not all data returns
@@ -80,6 +80,7 @@
       </script> 
    </body>
 </html>
+
 
 
 
