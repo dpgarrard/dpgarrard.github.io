@@ -62,14 +62,14 @@
         
                for (i = 0, i < data.length, i++) {
                   if (data[i].major == selected_major) {
-                  student_by_major.push(data[i].major)
+                  student_by_major.push(data[i].major);
                   }
                }
         
                // add to handlebar table template
                var templateText = document.getElementById('student_template').innerHTML; //access script tag student_template and assign to template_text
                var compiledTemplateText = Handlebars.compile(template_text);   // get and compile template code from prior variable and assign a new variable
-               compiled_html = compiledTemplateText({ rows: student_by_major })      // apply data to template using #each argument as key and filtered data variable as valued pair
+               compiled_html = compiledTemplateText({ rows: student_by_major });      // apply data to template using #each argument as key and filtered data variable as valued pair
                document.getElementById('student_table').innerHTML = compiledHtml; // insert all prior steps into div tag with appropriate id where wanted
             }
             else {
@@ -80,3 +80,4 @@
       </script> 
    </body>
 </html>
+
