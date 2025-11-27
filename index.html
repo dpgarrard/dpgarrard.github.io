@@ -22,9 +22,9 @@
             <h1 id= "my_heading">Select A Major Right Now</h1> 
             <button type ='button' id = 'show_bus' class="btn btn-primary" onClick="get_data('major')">Business Major</button> 
             <button type ='button' id ='show_cit' class ="btn btn-primary" onClick="get_data('major')">CIT Major</button> 
-            	<div id = "student_table">
-            	</div>
-         </div>
+          </div>
+		  <div id = "student_table">
+          </div>
       </div>
   
          
@@ -43,7 +43,7 @@
       </script>
   
       <script>
-		async function get_data(selected_major) {  //call this function when button is pressed the selected major is the argument or value it recieves from the button  
+		async function get_data (selected_major) {  //call this function when button is pressed the selected major is the argument or value it recieves from the button  
             
 			var response = await fetch('cit5students.json');   // receive all items from json array assign to response
 
@@ -80,6 +80,7 @@
       </script> 
    </body>
 </html>
+
 
 
 
