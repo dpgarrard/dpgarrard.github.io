@@ -47,35 +47,34 @@
 			var response = await fetch('cit5students.json');   // receive all items from json array assign to response
 
             if(response.ok) {   // test to ensure everything was received if so continue else return error
-        	document.getElementById("whole_thing").style = "background-color: lightgreen"; // changes entire document color (body) to light green 
-            if( selected_major == 'BUS') {
-            	document.getElementById("show_bus").setAttribute("class","btn-warning");  // changes the button color after its pressed
-				document.getElementById("show_cit").setAttribute("class","btn-primary");            
-			}
-            else {
-                document.getElementById("show_cit").setAttribute("class","btn-warning");  // changes the other button color after its pressed
-            	document.getElementById("show_bus").setAttribute("class","btn-primary");
-			}
-			document.getElemenById("
+        		document.getElementById("whole_thing").style = "background-color: lightgreen"; // changes entire document color (body) to light green 
+           	 	if( selected_major == 'BUS') {
+            		document.getElementById("show_bus").setAttribute("class","btn-warning");  // changes the button color after its pressed
+					document.getElementById("show_cit").setAttribute("class","btn-primary");            
+				}
+            	else {
+                	document.getElementById("show_cit").setAttribute("class","btn-warning");  // changes the other button color after its pressed
+            		document.getElementById("show_bus").setAttribute("class","btn-primary");
+				}
 				var data = await response.json(); // change json format to javascript array and assign to data
 
                	// filter data array for the selected major
-               	var student_by_major = []
+        		var student_by_major = []
         
-               	for (i = 0; i < data.length; i++) {
-                  if (data[i].major == selected_major) {
-                  	student_by_major.push(data[i]);
-                  }
-               	}
+            	for (i = 0; i < data.length; i++) {
+                	if (data[i].major == selected_major) {
+                  		student_by_major.push(data[i]);
+                	}
+            	}
         
                // add to handlebar table template
-               	var template_text = document.getElementById('student_template').innerHTML; //access script tag student_template and assign to template_text
+                var template_text = document.getElementById('student_template').innerHTML; //access script tag student_template and assign to template_text
                	var compiled_template_text = Handlebars.compile(template_text);   // get and compile template code from prior variable and assign a new variable
                	var compiled_html = compiled_template_text({ rows: student_by_major });      // apply data to template using #each argument as key and filtered data variable as valued pair
                	document.getElementById('student_table').innerHTML = compiled_html; // insert all prior steps into div tag with appropriate id where wanted
             }
             else {
-               document.querySelector('#student_table').innerHTML = "There was an error, or menu items not found"; // if not all data returns
+               document.getElementById('student_table').innerHTML = "There was an error, or menu items not found"; // if not all data returns
             }	
  
          }
@@ -83,6 +82,7 @@
       
    </body>
 </html>
+
 
 
 
