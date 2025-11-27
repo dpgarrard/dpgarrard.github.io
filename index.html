@@ -34,7 +34,8 @@
 
          <table class = " table table-bordered table-striped text-center border-danger">
 		  	<thead class = " text-center">
-            	<tr><th class = "text-center">Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr>
+            	<tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr>
+	  		</thead>
             		{{#each rows}}
                			<tr>
                   		<td>{{name}}</td><td>{{major}}</td><td>{{midterm}}</td><td>{{final}}</td>
@@ -48,7 +49,7 @@
 			var response = await fetch('cit5students.json');   // receive all items from json array assign to response
 
             if(response.ok) {   // test to ensure everything was received if so continue else return error
-        		document.getElementById("whole_thing").style = "background-color: light-orange"; // changes entire document color (body) to light green 
+        		document.getElementById("whole_thing").style = "background-color: lightorange"; // changes entire document color (body) to light green 
            	 	if( selected_major == 'BUS') {
             		document.getElementById("show_bus").setAttribute("class","btn-warning");  // changes the button color after its pressed
 					document.getElementById("show_cit").setAttribute("class","btn-primary");
@@ -88,6 +89,7 @@
       
    </body>
 </html>
+
 
 
 
