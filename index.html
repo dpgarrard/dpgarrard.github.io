@@ -44,19 +44,20 @@
   
       <script>
 	      async function get_data(selected_major) {  //call this function when button is pressed the selected major is the argument or value it recieves from the button
-            document.getElementById("whole_thing").style = "background-color: lightgreen"; // changes entire document color (body) to light green 
+           
+      
+            var response = await fetch('cit5students.json');   // receive all items from json array assign to response
+
+            if(response.ok) {   // test to ensure everything was received if so continue else return error
+        	document.getElementById("whole_thing").style = "background-color: lightgreen"; // changes entire document color (body) to light green 
             if('show_bus') {
             document.getElementById("show_bus").setAttribute("class","btn-warning");  // changes the button color after its pressed
             }
             else if ('show_cit') {
                document.getElementById("show_cit").setAttribute("class","btn-warning");  // changes the other button color after its pressed
             }
-      
-            var response = await fetch('cit5students.json');   // receive all items from json array assign to response
-
-            if(response.ok) {   // test to ensure everything was received if so continue else return error
-               var data = await response.json(); // change json format to javascript array and assign to data
-
+			var data = await response.json(); // change json format to javascript array and assign to data
+ document.getEl
                // filter data array for the selected major
                student_by_major = []
         
@@ -80,6 +81,7 @@
       </script> 
    </body>
 </html>
+
 
 
 
