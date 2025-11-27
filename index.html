@@ -32,15 +32,13 @@
       <!-- Handlebars template -->
       <script type="text/x-handlebars-template" id="student_template">
 
-         <table class = " table table-bordered table-striped text-center border-danger">
-		  	<thead class = "text-align: center">
-            	<tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr>
-	  		</thead>
-            		{{#each rows}}
-               			<tr>
-                  		<td>{{name}}</td><td>{{major}}</td><td>{{midterm}}</td><td>{{final}}</td>
-               			</tr>
-            		{{/each}}
+         <table class = " table table-bordered table-striped table-text-center border-danger">
+		      <tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr>
+          		{{#each rows}}
+               		<tr>
+                  	<td>{{name}}</td><td>{{major}}</td><td>{{midterm}}</td><td>{{final}}</td>
+               		</tr>
+            	{{/each}}
          </table>
       </script>
   	  <script>
@@ -50,7 +48,7 @@
 
             if(response.ok) {   // test to ensure everything was received if so continue else return error
         		
-				document.getElementById("whole_thing").style = "background-color: lightgreen"; // changes entire document color (body) to light red 
+				document.getElementById("whole_thing").style = "background-color: lightgreen"; // changes entire document color (body) to light green 
            	 	
 				if( selected_major == 'BUS') {
             		document.getElementById("show_bus").setAttribute("class","btn-warning");  // changes the button color after its pressed
@@ -79,7 +77,7 @@
                	var compiled_html = compiled_template_text({ rows: student_by_major });      // apply data to template using #each argument as key and filtered data variable as valued pair
                	document.getElementById('student_table').innerHTML = compiled_html; // insert all prior steps into div tag with appropriate id where wanted
 
-				document.getElementById('student_table').style = "background-color: lightblue";  //change table background color
+				document.getElementById('student_table').style = "background-color: lightblue";  //change table background color to light blue
 			}	
 			
             else {
@@ -91,6 +89,7 @@
       
    </body>
 </html>
+
 
 
 
