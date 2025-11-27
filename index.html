@@ -50,11 +50,13 @@
         		document.getElementById("whole_thing").style = "background-color: lightgreen"; // changes entire document color (body) to light green 
            	 	if( selected_major == 'BUS') {
             		document.getElementById("show_bus").setAttribute("class","btn-warning");  // changes the button color after its pressed
-					document.getElementById("show_cit").setAttribute("class","btn-primary");            
+					document.getElementById("show_cit").setAttribute("class","btn-primary");
+					document.getElementById("my_heading").innerHTML="You Selected Business Major"; // change heading
 				}
             	else {
                 	document.getElementById("show_cit").setAttribute("class","btn-warning");  // changes the other button color after its pressed
             		document.getElementById("show_bus").setAttribute("class","btn-primary");
+					document.getElementById("my_heading").innerHTML="You Selected CIT Major"; // change heading
 				}
 				var data = await response.json(); // change json format to javascript array and assign to data
 
@@ -82,6 +84,7 @@
       
    </body>
 </html>
+
 
 
 
