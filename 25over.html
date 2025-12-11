@@ -66,7 +66,11 @@
                 async getData() {
                     const response = await fetch('tickets1.json')
                     this.tickets = await response.json()
-                    this.tickets_over_25 = this.ticket.filter( (item) => item.actual_speed - item.posted_speed > 25 );     
+                    
+                    if (this.actual_speed - this.posted_speed > 25) {
+                        this.tickets_over_25.push(this.tickets)
+                    },
+                         
                 },
             },
           })
