@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><title>tickets over 25v3</title>
+<html><head><title>tickets over 25v4</title>
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
@@ -68,7 +68,7 @@
                     this.tickets = await response.json()
                     
                     for (i = 0; i < this.tickets; i++) {
-                        if (this.actual_speed - this.posted_speed > 25) {
+                        if ((this.actual_speed - this.posted_speed) > 25) {
                             this.tickets_over_25.push(this.tickets[i])
                         },
                     
