@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><title>tickets over 25v6</title>
+<html><head><title>tickets over 25v7</title>
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
@@ -67,11 +67,7 @@
                 async getData() {
                     const response = await fetch('tickets1.json')
                     this.tickets = await response.json()
-                    this.filter_by_speed_over()
-                }
-
-                filter_by_speed_over() {
-                    
+                        
 
                     for (i = 0; i < this.tickets.length; i++) {
                         if ((this.actual_speed[i] - this.posted_speed[i]) > 25) {
@@ -79,8 +75,8 @@
                         }
                     
                     }
-                         
-                },
+                }        
+                
             },
           })
       
