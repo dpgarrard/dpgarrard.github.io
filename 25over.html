@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><title>tickets over 25v5</title>
+<html><head><title>tickets over 25v6</title>
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
@@ -57,8 +57,7 @@
                 return {
                     tickets: [],           // empty array to hold ticket data
                     tickets_over_25: [],    // empty array to hold ticket data over 25
-                    showTable:false
-
+                    
                 }
             },
             created() {      // section executes as page loads
@@ -68,17 +67,18 @@
                 async getData() {
                     const response = await fetch('tickets1.json')
                     this.tickets = await response.json()
+                    this.filter_by_speed_over()
                 }
 
-                 filter_by_speed_over() {
-                    showTable:true
-
-                    for (i = 0; i < this.tickets; i++) {
-                        if ((this.actual_speed - this.posted_speed) > 25) {
-                            this.tickets_over_25.push(this.tickets[i])
-                        },
+                filter_by_speed_over() {
                     
-                    },
+
+                    for (i = 0; i < this.tickets.length; i++) {
+                        if ((this.actual_speed[i] - this.posted_speed[i]) > 25) {
+                            this.tickets_over_25.push(this.tickets[i])
+                        }
+                    
+                    }
                          
                 },
             },
