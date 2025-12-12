@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><title>tickets over 25v11</title>
+<html><head><title>tickets over 25v12</title>
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
@@ -19,7 +19,7 @@
         <a class="navbar-brand" href="#">Our Website</a>
     </div>
     <div>
-       <ul class="nav navbar-nav">
+       <ul class="nav navbar-nav" v-on:mousover='change_color'>
            <li class="active"><a href="index.html">All Tickets</a></li>
            <li><a href="25over.html">25mph or more over</a></li>
        </ul>
@@ -57,7 +57,7 @@
                 return {
                     tickets: [],           // empty array to hold ticket data
                     tickets_over_25: [],    // empty array to hold ticket data over 25
-                    
+                    document.getElementById('table_style').style = "background-color : red";
                 }
             },
             created() {      // section executes as page loads
@@ -76,7 +76,7 @@
                         }
                     
                     }
-                document.getElementById('table_style').style = "background-color: lightred";
+                    
                 }  
             },
           })
