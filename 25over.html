@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><title>tickets over 25v9</title>
+<html><head><title>tickets over 25v10</title>
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
@@ -31,7 +31,7 @@
 
      <h2>Tickets on July 4, 2014, Minneapolis/St. Paul that are over 25 MPH</h2>
           
-          <table class="table table-bordered table-striped">
+          <table class="table table-bordered table-striped"id="table_style">
               <tr>
                   <th>Ticket ID</th>
                   <th>Time</th>
@@ -72,9 +72,11 @@
                         for (i = 0; i < this.tickets.length; i++) {
                             if ((this.tickets[i].actual_speed - this.tickets[i].posted_speed) > 25) {
                             this.tickets_over_25.push(this.tickets[i])
+                            
                         }
                     
                     }
+                document.getElementById('table_style').style = "backgrouns-color: lightred";
                 }  
             },
           })
