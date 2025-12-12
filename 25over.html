@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><title>tickets over 25v14</title>
+<html><head><title>tickets over 25v15</title>
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
@@ -19,7 +19,7 @@
         <a class="navbar-brand" href="#">Our Website</a>
     </div>
     <div>
-       <ul class="nav navbar-nav" v-on:mousover='change_color'>
+       <ul class="nav navbar-nav">
            <li class="active"><a href="index.html">All Tickets</a></li>
            <li><a href="25over.html">25mph or more over</a></li>
        </ul>
@@ -49,7 +49,7 @@
          </table>
   
 </div>   <!-- end ticket_app -->
-    <!--<div>make an image div here</div>-->
+    <div> <img src= "image/man licking his lips.jpg" alt="yummy tickets" width="200" height="200"> </div>
 </div>   <!-- end class= 'container' -->
 
 <script>
@@ -73,7 +73,7 @@
                         for (i = 0; i < this.tickets.length; i++) {
                             if ((this.tickets[i].actual_speed - this.tickets[i].posted_speed) > 25) {
                             this.tickets_over_25.push(this.tickets[i])
-                            document.getElementById('table_style').style.backgroundcolor = "red";
+                            document.getElementById('table_style').style.backgroundColor = "red";
                         }
                     
                     }
